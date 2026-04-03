@@ -15,10 +15,14 @@ import java.util.UUID;
 public class ProductPersistenceAdapter implements ProductRepository {
 
     private final ProductJpaRepository productJpaRepository;
-    private final ProductEntityMapper mapper = new ProductEntityMapper();
+    private final ProductEntityMapper mapper;
 
-    public ProductPersistenceAdapter(ProductJpaRepository productJpaRepository) {
+    public ProductPersistenceAdapter(
+            ProductJpaRepository productJpaRepository,
+            ProductEntityMapper mapper
+    ) {
         this.productJpaRepository = productJpaRepository;
+        this.mapper = mapper;
     }
 
     @Override

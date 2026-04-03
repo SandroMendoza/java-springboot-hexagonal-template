@@ -42,7 +42,7 @@ class ProductPersistenceAdapterTest {
         assertEquals(product.getProductName(), capturedEntity.getName());
         assertEquals(product.getPrice(), capturedEntity.getPrice());
         assertEquals(product.getStocks(), capturedEntity.getStocks());
-        assertEquals(product.isAvailable(), capturedEntity.getAvailable());
+        assertEquals(product.isAvailable(), capturedEntity.isAvailable());
 
         assertEquals(product.getId(), savedProduct.getId());
         assertEquals(product.getProductName(), savedProduct.getProductName());

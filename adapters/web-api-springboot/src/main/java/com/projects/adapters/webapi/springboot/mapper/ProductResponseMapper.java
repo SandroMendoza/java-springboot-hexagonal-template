@@ -2,8 +2,10 @@ package com.projects.adapters.webapi.springboot.mapper;
 
 import com.projects.adapters.webapi.springboot.response.CreateProductResponse;
 import com.projects.core.application.readmodel.ProductReadModel;
+import org.springframework.stereotype.Component;
 
-public class ProductResponseMapper implements ResponseMapper<CreateProductResponse, ProductReadModel> {
+@Component
+public class ProductResponseMapper implements ResponseMapper<ProductReadModel, CreateProductResponse> {
 
     @Override
     public CreateProductResponse toDto(ProductReadModel readModel) {

@@ -15,31 +15,41 @@ public class Product {
         if (productName == null || productName.isBlank()) {
             throw new IllegalArgumentException("Product name cannot be null or blank");
         }
-        if (price == null || price.signum() < 0) {
-            throw new IllegalArgumentException("Price cannot be negative");
-        }
-        if (stocks < 0) {
-            throw new IllegalArgumentException("Stocks cannot be negative");
-        }
 
         this.id = UUID.randomUUID();
         this.productName = productName;
-        this.adjustPrice(price);
+        adjustPrice(price);
         adjustStocks(stocks);
     }
 
+    public static Product rehydrate(
+        UUID id,
+        String name,
+        BigDecimal price,
+        int stocks
+    ) {
+        Product product = new Product(name, price, stocks);
+        product.id = id;
+        return product;
+    }
+
     public UUID getId() { return id; }
-    public void setId(UUID id) { this.id = id; }
     public String getProductName() { return productName; }
     public BigDecimal getPrice() { return price; }
     public int getStocks() { return stocks; }
     public boolean isAvailable() { return isAvailable; }
 
     public void adjustPrice(BigDecimal newPrice) {
+        if (newPrice == null || newPrice.signum() < 0) {
+            throw new IllegalArgumentException("Price cannot be negative");
+        }
         this.price = newPrice;
     }
 
     public void adjustStocks(int newStocks) {
+        if (newStocks < 0) {
+            throw new IllegalArgumentException("Stocks cannot be negative");
+        }
         this.stocks = newStocks;
         this.isAvailable = newStocks > 0;
     }

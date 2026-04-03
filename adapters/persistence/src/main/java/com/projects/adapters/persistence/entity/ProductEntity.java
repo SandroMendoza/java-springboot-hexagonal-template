@@ -14,55 +14,31 @@ public class ProductEntity {
 
     private String name;
     private BigDecimal price;
-    private String category;
     private int stocks;
-    private Boolean isAvailable;
 
-    public Boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(Boolean available) {
-        isAvailable = available;
-    }
-
-    public int getStocks() {
-        return stocks;
-    }
-
-    public void setStocks(int stocks) {
-        this.stocks = stocks;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    // Getters
     public UUID getId() {
         return id;
     }
+    public String getName() {
+        return name;
+    }
+    public BigDecimal getPrice() {
+        return price;
+    }
+    public int getStocks() { return stocks; }
 
+    // Setters
     public void setId(UUID id) {
         this.id = id;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+    public void setStocks(int stocks) {
+        this.stocks = stocks;
     }
 }

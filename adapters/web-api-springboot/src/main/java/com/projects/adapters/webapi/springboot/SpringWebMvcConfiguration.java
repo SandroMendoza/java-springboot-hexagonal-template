@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@ComponentScan(
-    basePackages = {"com.projects.adapters.webapi.springboot"}
-)
+@ComponentScan(basePackageClasses = SpringWebMvcConfiguration.class)
 public class SpringWebMvcConfiguration implements WebMvcConfigurer {
 }

@@ -2,28 +2,28 @@ package com.projects.adapters.persistence.mapper;
 
 import com.projects.adapters.persistence.entity.ProductEntity;
 import com.projects.core.domain.model.Product;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProductEntityMapper implements EntityMapper<Product, ProductEntity> {
 
     @Override
-    public ProductEntity toEntity(Product domain) {
+    public ProductEntity toEntity(Product product) {
         ProductEntity entity = new ProductEntity();
-        entity.setId(domain.getId());
-        entity.setName(domain.getProductName());
-        entity.setPrice(domain.getPrice());
-        entity.setStocks(domain.getStocks());
-        entity.setAvailable(domain.isAvailable());
+        entity.setId(product.getId());
+        entity.setName(product.getProductName());
+        entity.setPrice(product.getPrice());
+        entity.setStocks(product.getStocks());
         return entity;
     }
 
     @Override
     public Product toDomain(ProductEntity entity) {
-        Product product = new Product(
+        return Product.rehydrate(
+            entity.getId(),
             entity.getName(),
             entity.getPrice(),
             entity.getStocks()
         );
-        product.setId(entity.getId());
-        return product;
     }
 }

@@ -3,7 +3,7 @@ package com.projects.core.usecase;
 import com.projects.core.application.mapper.ProductReadModelMapper;
 import com.projects.core.application.readmodel.ProductReadModel;
 import com.projects.core.application.usecase.CreateProductUseCase;
-import com.projects.core.domain.command.CreateProductCommand;
+import com.projects.core.application.command.CreateProductCommand;
 import com.projects.core.application.port.out.ProductRepository;
 import org.junit.jupiter.api.Test;
 

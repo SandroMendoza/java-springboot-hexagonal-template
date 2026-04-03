@@ -1,19 +1,19 @@
 package com.projects.core.application.usecase;
 
-import com.projects.core.application.mapper.ProductReadModelMapper;
+import com.projects.core.application.mapper.ReadModelMapper;
 import com.projects.core.application.readmodel.ProductReadModel;
-import com.projects.core.domain.command.CreateProductCommand;
+import com.projects.core.application.command.CreateProductCommand;
 import com.projects.core.domain.model.Product;
 import com.projects.core.application.port.out.ProductRepository;
 
 public class CreateProductUseCase {
 
     private final ProductRepository productRepository;
-    private final ProductReadModelMapper mapper;
+    private final ReadModelMapper<Product, ProductReadModel> mapper;
 
     public CreateProductUseCase(
         ProductRepository productRepository,
-        ProductReadModelMapper mapper
+        ReadModelMapper<Product, ProductReadModel> mapper
     ) {
         this.productRepository = productRepository;
         this.mapper = mapper;

@@ -1,4 +1,4 @@
-package com.projects.core.domain.command;
+package com.projects.core.application.command;
 
 import java.math.BigDecimal;
 

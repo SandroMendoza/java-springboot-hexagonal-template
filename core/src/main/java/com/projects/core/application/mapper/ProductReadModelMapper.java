@@ -3,16 +3,16 @@ package com.projects.core.application.mapper;
 import com.projects.core.application.readmodel.ProductReadModel;
 import com.projects.core.domain.model.Product;
 
-public class ProductReadModelMapper implements ReadModelMapper<ProductReadModel, Product> {
+public class ProductReadModelMapper implements ReadModelMapper<Product, ProductReadModel> {
 
     @Override
-    public ProductReadModel toReadModel(Product domain) {
+    public ProductReadModel toReadModel(Product product) {
         return new ProductReadModel(
-            domain.getId(),
-            domain.getProductName(),
-            domain.getPrice(),
-            domain.getStocks(),
-            domain.isAvailable()
+            product.getId(),
+            product.getProductName(),
+            product.getPrice(),
+            product.getStocks(),
+            product.isAvailable()
         );
     }
 }
