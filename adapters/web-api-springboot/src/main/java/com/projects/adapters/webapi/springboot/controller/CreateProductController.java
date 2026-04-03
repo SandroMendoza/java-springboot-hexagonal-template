@@ -22,8 +22,8 @@ public class CreateProductController implements ApiBase {
     private final ProductResponseMapper mapper;
 
     public CreateProductController(
-            CreateProductUseCase createProductUseCase,
-            ProductResponseMapper mapper
+        CreateProductUseCase createProductUseCase,
+        ProductResponseMapper mapper
     ) {
         this.createProductUseCase = createProductUseCase;
         this.mapper = mapper;
@@ -43,7 +43,7 @@ public class CreateProductController implements ApiBase {
         CreateProductResponse response = mapper.toDto(createdProduct);
 
         return ResponseEntity
-            .created(URI.create("/products" + response.id()))
+            .created(URI.create("/api/products/" + response.id()))
             .body(response);
     }
 }

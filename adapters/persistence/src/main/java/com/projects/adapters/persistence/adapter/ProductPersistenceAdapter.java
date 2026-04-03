@@ -18,8 +18,8 @@ public class ProductPersistenceAdapter implements ProductRepository {
     private final ProductEntityMapper mapper;
 
     public ProductPersistenceAdapter(
-            ProductJpaRepository productJpaRepository,
-            ProductEntityMapper mapper
+        ProductJpaRepository productJpaRepository,
+        ProductEntityMapper mapper
     ) {
         this.productJpaRepository = productJpaRepository;
         this.mapper = mapper;

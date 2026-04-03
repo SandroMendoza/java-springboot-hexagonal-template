@@ -55,7 +55,8 @@ class CreateProductControllerTest extends WebMvcTestBase {
             .andExpect(jsonPath("$.name").value("Dimsum"))
             .andExpect(jsonPath("$.price").value(10.20))
             .andExpect(jsonPath("$.stocks").value(100))
-            .andExpect(jsonPath("$.isAvailable").value(true));
+            .andExpect(jsonPath("$.isAvailable").value(true))
+            .andExpect(header().string("Location", "/api/products/" + productId));
 
         verify(createProductUseCase).execute(any());
     }
