@@ -1,4 +1,4 @@
-package com.projects.java_springboot_hexagonal_template;
+package com.projects;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

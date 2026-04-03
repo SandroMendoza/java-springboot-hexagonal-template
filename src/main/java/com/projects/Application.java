@@ -1,4 +1,4 @@
-package com.projects.java_springboot_hexagonal_template;
+package com.projects;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
